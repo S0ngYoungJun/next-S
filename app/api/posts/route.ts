@@ -1,4 +1,4 @@
-import { getSession } from 'next-auth/react';
+// import { getSession } from 'next-auth/react';
 import clientPromise from '@/app/lib/mongodb';
 import { getServerSession } from "next-auth";
 export async function POST(req: Request) {
@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   //const session = await geSession({req}) << 이거안댐 ㅅㄱ
   // 요청 본문을 파싱합니다.
   const body = await req.json();
-  const { content, authorName, authorEmail } = body;
+  const { content, authorName, authorEmail, tags } = body;
 
   // 로그인하지 않은 경우 에러 처리
   if (!session) {
@@ -24,6 +24,9 @@ export async function POST(req: Request) {
     author: authorName || authorEmail,
     content,
     createdAt: new Date(),
+    tags,
+    likes: 0, 
+    dislikes: 0 
   });
 
   return new Response(JSON.stringify({ message: 'Post created successfully', postId: result.insertedId }), {

@@ -1,6 +1,18 @@
 .root{
  width:100vw;
  height:100vh;
+ display:flex;
+}
+.input{
+  width:100vw;
+  height:20vh;
+}
+.board{
+  width:40vw;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+
 }
 .postListContainer {
   max-height: 70vh;
@@ -12,4 +24,8 @@
   background-color: #fff; // 배경색, 필요에 따라 조정
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // 그림자 효과, 필요에 따라 조정
   border-radius: 8px; // 모서리 둥글기, 필요에 따라 조정
+
+}
+.postListContainer::-webkit-scrollbar {
+  display: none;
 }

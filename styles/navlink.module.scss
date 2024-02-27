@@ -1,0 +1,15 @@
+.linkname{
+  text-decoration: none;
+  color: #526D82;
+}
+
+.linkbox{
+  display: flex;
+  width:15vw;
+  justify-content: center;
+  border-radius: 10px;
+}
+.activeLink{
+  background-color: #27374D;
+  color:white;
+}
